@@ -1,0 +1,8 @@
+<div>
+    <input
+      type="checkbox"
+      [checked]="(themeService.theme$ | async) === false"
+      (change)="themeService.switchTheme()"
+    />
+  </div>
+  

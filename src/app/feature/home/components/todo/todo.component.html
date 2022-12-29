@@ -1,0 +1,17 @@
+<section>
+  <h1>To do List</h1>
+  <form [formGroup]="todoForm" (submit)="($event)">
+    <span>
+      <input type="text" name="todo" formControlName="todo" />
+      <button type="submit" [disabled]="todoForm.invalid">
+        <fa-icon [icon]="faPlus"></fa-icon>
+      </button>
+    </span>
+    <p>
+      <small
+        *ngIf="todoForm.get('todo')?.errors && todoForm.get('todo')?.touched"
+        >field is required</small
+      >
+    </p>
+  </form>
+</section>
