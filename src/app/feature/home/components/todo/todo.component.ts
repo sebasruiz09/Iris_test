@@ -1,7 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { FormControl, Validators, FormGroup } from '@angular/forms';
 import { debounceTime } from 'rxjs';
 import { faPlus } from '@fortawesome/free-solid-svg-icons';
+import { FaIconLibrary } from '@fortawesome/angular-fontawesome';
 
 @Component({
   selector: 'app-todo',
@@ -9,13 +10,12 @@ import { faPlus } from '@fortawesome/free-solid-svg-icons';
   styleUrls: ['./todo.component.scss'],
 })
 export class TodoComponent {
-  constructor() {
+  constructor(library : FaIconLibrary) {
+    library.addIcons(faPlus);
     this.buildForm();
   }
 
-  faPlus = faPlus;
-
-  todoForm!: FormGroup;
+  public todoForm!: FormGroup;
 
   private buildForm() {
     this.todoForm = new FormGroup({
