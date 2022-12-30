@@ -3,6 +3,7 @@ import { FormControl, Validators, FormGroup } from '@angular/forms';
 import { debounceTime } from 'rxjs';
 import { faPlus } from '@fortawesome/free-solid-svg-icons';
 import { FaIconLibrary } from '@fortawesome/angular-fontawesome';
+import { MessagesService } from '../../services/messages.service';
 
 @Component({
   selector: 'app-todo',
@@ -10,7 +11,10 @@ import { FaIconLibrary } from '@fortawesome/angular-fontawesome';
   styleUrls: ['./todo.component.scss'],
 })
 export class TodoComponent {
-  constructor(library : FaIconLibrary) {
+  constructor(
+    private readonly messagesService: MessagesService,
+    library: FaIconLibrary
+  ) {
     library.addIcons(faPlus);
     this.buildForm();
   }
@@ -21,9 +25,10 @@ export class TodoComponent {
     this.todoForm = new FormGroup({
       todo: new FormControl('', [Validators.required]),
     });
+  }
 
-    this.todoForm.valueChanges.pipe(debounceTime(1000)).subscribe((value) => {
-      console.log(value);
-    });
+  newMessage(){
+    const { todo } = this.todoForm.value;
+    this.messagesService.addMessage(todo);
   }
 }

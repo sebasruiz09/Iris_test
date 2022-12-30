@@ -2,4 +2,7 @@
   <div class="list__line">
     <h2 class="list__title">ALL</h2>
   </div>
+  <article class="list__cards" >
+    <app-card *ngFor="let message of messages$ | async" [message]="message"></app-card>
+  </article>
 </section>

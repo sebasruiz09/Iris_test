@@ -1,6 +1,10 @@
 <section class="todo">
   <h1 class="todo__title">To do List</h1>
-  <form class="todo__form" [formGroup]="todoForm" (submit)="($event)">
+  <form
+    class="todo__form"
+    [formGroup]="todoForm"
+    (submit)="newMessage()"
+  >
     <select name="" id="" class="todo__form_item">
       <option value="all">all</option>
     </select>
@@ -22,7 +26,8 @@
       </button>
     </span>
     <p>
-      <small class="advert"
+      <small
+        class="advert"
         *ngIf="todoForm.get('todo')?.errors && todoForm.get('todo')?.touched"
         >* field is required</small
       >

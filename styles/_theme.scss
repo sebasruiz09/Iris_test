@@ -1,22 +1,27 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Source+Sans+Pro&display=swap");
 
-body{
-    font-family: 'Poppins', sans-serif;
-    transition:  0.2s all;
+body {
+  font-family: "Poppins", sans-serif;
+  transition: 0.2s all;
 }
+
+
 
 .light {
   --bg-color: #dfdfdf;
   --secondary-color: #004646;
   --border-color: rgb(160, 160, 160);
   --text-color: rgb(24, 24, 24);
-  --secondary-text-color : rgb(62, 62, 62);
+  --secondary-text-color: rgb(62, 62, 62);
+  --card-text-color: rgb(50, 50, 50);
 }
 
 .dark {
   --bg-color: #004646;
   --secondary-color: #818181;
   --border-color: rgb(160, 160, 160);
-  --text-color: rgb(24, 24, 24);
-  --secondary-text-color: rgb(255,255,255);
+  --text-color: rgb(174, 174, 174);
+  --secondary-text-color: rgb(255, 255, 255);
+  --card-text-color: rgb(50, 50, 50);
 }

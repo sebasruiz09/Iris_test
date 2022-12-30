@@ -7,13 +7,11 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { ListComponent } from './components/list/list.component';
 import { TodoComponent } from './components/todo/todo.component';
 import { SharedModule } from '../../shared/shared.module';
+import { CardComponent } from './components/card/card.component';
+import { MessagesService } from './services/messages.service';
 
 @NgModule({
-  declarations: [
-    HomeComponent,
-    ListComponent,
-    TodoComponent,
-  ],
+  declarations: [HomeComponent, ListComponent, TodoComponent, CardComponent],
   imports: [
     CommonModule,
     HomeRoutingModule,
@@ -21,5 +19,6 @@ import { SharedModule } from '../../shared/shared.module';
     SharedModule,
     FontAwesomeModule,
   ],
+  providers: [MessagesService],
 })
 export class HomeModule {}

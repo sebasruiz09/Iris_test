@@ -1,0 +1,13 @@
+<main class="card">
+    <input type="checkbox" name="" id="check-box">
+    <label for="check-box" class="check">
+        <img src="assets/svg/check.svg" alt="check" class="check__icon">
+    </label>
+    <div class="card__message">
+        <p class="card__message_item">{{message.message}}</p>
+        <small class="card__message_date">{{message.date | date : 'medium'}}</small>
+    </div>
+    <button class="card__delete">
+        x
+    </button>
+</main>

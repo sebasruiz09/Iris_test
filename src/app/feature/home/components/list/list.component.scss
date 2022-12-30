@@ -1,11 +1,21 @@
+@use "/styles/mixins" as *;
 
-.list{
-    width: 500px;
-    padding: 10px;
-    font-size: 18px;
+.list {
+  width: 500px;
+  padding: 10px;
+  font-size: 18px;
 
-    &__title{
-        color: var(--text-color);
-        border-bottom: 2px solid var(--border-color);
-    }
+  &__title {
+    color: var(--text-color);
+    border-bottom: 2px solid var(--border-color);
+  }
+
+  &__cards {
+    padding: 10px 0;
+    @include alignColum();
+    justify-content: flex-start;
+    gap: 5px;
+    height: 320px;
+    overflow-y: auto;
+  }
 }

@@ -1,0 +1,71 @@
+@use "/styles/mixins" as *;
+
+.card {
+  width: 100%;
+  background-color: #fff;
+  border-radius: 7px;
+  display: flex;
+  padding: 5px 7px;
+  gap: 15px;
+  align-items: center;
+  border: 1px solid var(--border-color);
+
+  &__message {
+    width: 100%;
+    @include alignColum();
+    color: var(--card-text-color);
+    font-family: "Source Sans Pro", sans-serif;
+
+    &_item {
+      font-size: 16px;
+    }
+
+    &_date {
+      font-size: 15px;
+      font-weight: bolder;
+      text-align: end;
+    }
+  }
+
+  &__delete {
+    border: none;
+    font-weight: bolder;
+    width: 35px;
+    height: 32px;
+    font-size: 20px;
+    border-radius: 255px;
+    background: none;
+    transition: all 0.3s ease;
+    color: var(--text-color);
+
+    &:hover {
+      background: rgba(0, 0, 0, 0.4);
+      color: var(--secondary-text-color);
+    }
+  }
+}
+
+#check-box {
+  display: none;
+}
+
+.check {
+  width: 22.5px;
+  height: 20px;
+  border: 2px solid black;
+  border-radius: 5px;
+  position: relative;
+  user-select: none;
+
+  &__icon {
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    top: -55%;
+    left: -20%;
+  }
+}
+
+#check-box:not(:checked) + .check .check__icon {
+  display: none;
+}
