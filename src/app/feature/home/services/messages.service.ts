@@ -24,4 +24,10 @@ export class MessagesService {
   public getMessages(): Observable<Message[]> {
     return this.subject.asObservable();
   }
+
+  public deleteMessage(id: string): void {
+    const result = this.messages.filter((message) => message.id !== id);
+    this.messages = result;
+    this.subject.next(this.messages);
+  }
 }

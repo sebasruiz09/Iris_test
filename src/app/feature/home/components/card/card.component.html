@@ -7,7 +7,7 @@
         <p class="card__message_item">{{message.message}}</p>
         <small class="card__message_date">{{message.date | date : 'medium'}}</small>
     </div>
-    <button class="card__delete">
+    <button class="card__delete" (click)="deleteItem()">
         x
     </button>
 </main>

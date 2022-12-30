@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { Message } from '../../interfaces/message.interface';
 
 @Component({
@@ -8,6 +8,9 @@ import { Message } from '../../interfaces/message.interface';
 })
 export class CardComponent {
   @Input() message!: Message;
+  @Output() delete = new EventEmitter<Message>();
 
-  
+  deleteItem() {
+    this.delete.emit(this.message);
+  }
 }

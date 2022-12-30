@@ -9,12 +9,12 @@ import { Observable, of } from 'rxjs';
   styleUrls: ['./list.component.scss'],
 })
 export class ListComponent {
-  constructor(private readonly messageService: MessagesService) {
-    this.messages$.subscribe({
-      next : (message) => {
-        console.log(message);
-      }
-    });
-  }
+  constructor(private readonly messageService: MessagesService) {}
   public messages$: Observable<Message[]> = this.messageService.getMessages();
+
+  public onCardDelete(message: Message){
+    this.messageService.deleteMessage(message.id);
+  }
 }
+
+
