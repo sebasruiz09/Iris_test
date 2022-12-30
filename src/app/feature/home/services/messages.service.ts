@@ -9,6 +9,8 @@ export class MessagesService {
 
   private messages: Message[] = [];
 
+  private idsChecked: string[] = [];
+
   subject = new BehaviorSubject<Message[]>([]);
 
   public addMessage(message: string): void {

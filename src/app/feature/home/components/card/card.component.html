@@ -1,6 +1,6 @@
 <main class="card">
-    <input type="checkbox" name="" id="check-box">
-    <label for="check-box" class="check">
+    <input type="checkbox" [checked]="selected" (change)="checkItem($event)">
+    <label class="check" (click)="checkItem($event)">
         <img src="assets/svg/check.svg" alt="check" class="check__icon">
     </label>
     <div class="card__message">
@@ -10,4 +10,4 @@
     <button class="card__delete" (click)="deleteItem()">
         x
     </button>
-</main>
+</main> 

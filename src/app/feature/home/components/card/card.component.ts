@@ -8,9 +8,21 @@ import { Message } from '../../interfaces/message.interface';
 })
 export class CardComponent {
   @Input() message!: Message;
-  @Output() delete = new EventEmitter<Message>();
+  @Output() onDelete = new EventEmitter<Message>();
+  @Output() onSelect = new EventEmitter<Message & { selected: boolean }>();
+
+  selected: boolean = false;
 
   deleteItem() {
-    this.delete.emit(this.message);
+    this.onDelete.emit(this.message);
+  }
+
+  checkItem(event: Event) {
+    event.preventDefault();
+    this.selected = !this.selected;
+    this.onSelect.emit({
+      ...this.message,
+      selected: this.selected,
+    });
   }
 }

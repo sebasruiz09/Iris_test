@@ -45,7 +45,7 @@
   }
 }
 
-#check-box {
+input[type="checkbox"]{
   display: none;
 }
 
@@ -66,6 +66,6 @@
   }
 }
 
-#check-box:not(:checked) + .check .check__icon {
+input[type="checkbox"]:not(:checked) + .check .check__icon {
   display: none;
 }

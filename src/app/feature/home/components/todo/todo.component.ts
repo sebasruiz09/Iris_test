@@ -27,8 +27,9 @@ export class TodoComponent {
     });
   }
 
-  newMessage(){
+  newMessage() {
     const { todo } = this.todoForm.value;
     this.messagesService.addMessage(todo);
+    this.todoForm.reset();
   }
 }
