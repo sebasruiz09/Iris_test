@@ -1,15 +1,30 @@
-<section>
-  <h1>To do List</h1>
-  <form [formGroup]="todoForm" (submit)="($event)">
-    <span>
-      <input type="text" name="todo" formControlName="todo" />
-      <button type="submit" [disabled]="todoForm.invalid">
+<section class="todo">
+  <h1 class="todo__title">To do List</h1>
+  <form class="todo__form" [formGroup]="todoForm" (submit)="($event)">
+    <select name="" id="" class="todo__form_item">
+      <option value="all">all</option>
+    </select>
+    <span class="todo__form_content">
+      <input
+        class="todo__form_input"
+        type="text"
+        name="todo"
+        placeholder="Create Todo"
+        formControlName="todo"
+        autocomplete="off"
+      />
+      <button
+        class="todo__form_send"
+        type="submit"
+        [disabled]="todoForm.invalid"
+      >
+        +
       </button>
     </span>
     <p>
-      <small
+      <small class="advert"
         *ngIf="todoForm.get('todo')?.errors && todoForm.get('todo')?.touched"
-        >field is required</small
+        >* field is required</small
       >
     </p>
   </form>

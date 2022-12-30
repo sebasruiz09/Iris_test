@@ -1,0 +1,45 @@
+#theme{
+    display: none;
+}
+
+.box {
+  width: 50px;
+  padding: 2px;
+  align-items: center;
+  height: 25px;
+  background-color: var(--secondary-color);
+  display: flex;
+  border-radius: 50px;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+  transform: scale(1.5);
+
+  &__content{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  &__ball {
+    background: #fff;
+    width: 19px;
+    height: 19px;
+    position: absolute;
+    top: 2.5px;
+    left: 2.7px;
+    border-radius: 50%;
+    transition: 0.20s linear;
+  }
+}
+.box__svg {
+  width: 17px;
+  height: 17px;
+  object-fit: contain;
+}
+
+input[type="checkbox"]:checked + .box .box__ball {
+    transform: translateX(24px);
+}

@@ -1,7 +1,22 @@
-.light{
-    --bg-color: #000;
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
+body{
+    font-family: 'Poppins', sans-serif;
+    transition:  0.2s all;
 }
 
-.dark{
-    --bg-color: #FFF;
+.light {
+  --bg-color: #dfdfdf;
+  --secondary-color: #004646;
+  --border-color: rgb(160, 160, 160);
+  --text-color: rgb(24, 24, 24);
+  --secondary-text-color : rgb(62, 62, 62);
+}
+
+.dark {
+  --bg-color: #004646;
+  --secondary-color: #818181;
+  --border-color: rgb(160, 160, 160);
+  --text-color: rgb(24, 24, 24);
+  --secondary-text-color: rgb(255,255,255);
 }

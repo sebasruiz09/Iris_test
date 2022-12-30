@@ -1,0 +1,11 @@
+
+.list{
+    width: 500px;
+    padding: 10px;
+    font-size: 18px;
+
+    &__title{
+        color: var(--text-color);
+        border-bottom: 2px solid var(--border-color);
+    }
+}

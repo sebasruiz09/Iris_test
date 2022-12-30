@@ -1,8 +1,14 @@
 <div>
-    <input
-      type="checkbox"
-      [checked]="(themeService.theme$ | async) === false"
-      (change)="themeService.switchTheme()"
-    />
-  </div>
-  
+  <input
+    id="theme"
+    class="checking"
+    type="checkbox"
+    [checked]="(themeService.theme$ | async) === false"
+    (change)="themeService.switchTheme()"
+  />
+  <label class="box" for="theme">
+    <i class="box__content"><img class="box__svg" src="/assets/svg/sun.svg" alt="" /></i>
+    <i class="box__content"><img class="box__svg" src="/assets/svg/moon.svg" alt="" /></i>
+    <div class="box__ball"></div>
+  </label>
+</div>

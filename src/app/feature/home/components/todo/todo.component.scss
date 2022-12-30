@@ -1,0 +1,64 @@
+@use "/styles/mixins" as *;
+
+.todo {
+  width: 500px;
+  padding: 10px;
+
+  &__title {
+    color: var(--text-color);
+  }
+
+  &__form {
+    @include alignColum;
+    gap: 5px;
+
+    &_content {
+      display: flex;
+      border-radius: 7px;
+      background: #fff;
+      border: 1px solid var(--border-color);
+      overflow: hidden;
+    }
+
+    &_item {
+      width: 100%;
+      border-radius: 7px;
+      border: 1px solid var(--border-color);
+      padding: 9px;
+      font-weight: bolder;
+      color: var(--text-color);
+
+      &:focus {
+        outline: none;
+      }
+    }
+
+    &_input {
+      border: none;
+      width: 100%;
+      padding: 9px;
+      font-weight: bolder;
+      color: var(--text-color);
+
+      &:focus {
+        border: none;
+        outline: none;
+      }
+    }
+
+    &_send {
+      width: 30px;
+      background: none;
+      padding: 0 8px;
+      font-weight: bolder;
+      border: none;
+      font-size: 20px;
+      color: var(--text-color);
+    }
+  }
+}
+
+.advert{
+  color: var(--secondary-text-color);
+  font-size: 15px;
+}
