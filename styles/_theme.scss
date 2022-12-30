@@ -15,13 +15,15 @@ body {
   --text-color: rgb(24, 24, 24);
   --secondary-text-color: rgb(62, 62, 62);
   --card-text-color: rgb(50, 50, 50);
+  --footer-color: rgba(0,0,0,.5);
 }
 
 .dark {
-  --bg-color: #004646;
+  --bg-color: #273336;
   --secondary-color: #818181;
   --border-color: rgb(160, 160, 160);
   --text-color: rgb(174, 174, 174);
   --secondary-text-color: rgb(255, 255, 255);
   --card-text-color: rgb(50, 50, 50);
+  --footer-color: rgba(255,255,255,.7);
 }
