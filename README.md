@@ -17,6 +17,8 @@ Run `ng build` to build the project. The build artifacts will be stored in the `
 
 Run `ng test` to execute the unit tests Karma with the javascript testing framework Jasmine
 
+Run `ng test --code-coverage` to see the percentage of coverage of unit tests
+
 # 2. Extra Features
 
 ## Theme functionality
