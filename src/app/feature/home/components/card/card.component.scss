@@ -19,17 +19,25 @@
     font-weight: bolder;
 
     &_item {
-      font-size: 16px;
-      width: 400px;
+      font-size: 12px;
+      max-width: 200px;
+       @include screen(minsmall){
+        font-size: 16px;
+        width: 400px;
+       }
       height: auto;
       overflow: hidden;
       word-wrap: break-word;
     }
 
     &_date {
-      font-size: 15px;
+      width: 100%;
+      font-size: 12px;
       font-weight: bolder;
       text-align: end;
+      @include screen(minsmall){
+        font-size: 15px;
+      }
     }
   }
 
