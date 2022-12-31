@@ -10,16 +10,32 @@
     border-bottom: 2px solid var(--border-color);
   }
 
+  &__checks{
+    margin: 5px 5px 0 0;
+    padding: 5px 10px;
+    border-radius: 5px;
+    border: 1px solid var(--border-color);
+    color: #fff;
+    font-weight: bolder;
+    font-size: 14px;
+    color: var(--card-text-color);
+    transition: all 0.3s;
+
+    &:focus{
+      outline: none;
+    }
+
+    &:hover{
+      cursor: pointer;
+    }
+  }
+
   &__cards {
     padding: 10px 0;
     @include alignColum();
     justify-content: flex-start;
     gap: 5px;
-    height: 320px;
     overflow-y: auto;
-
-    @include screen(med-small) {
-      height: 440px;
-    }
+    max-height: 350px;
   }
 }

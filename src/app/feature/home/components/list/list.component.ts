@@ -30,4 +30,8 @@ export class ListComponent {
     });
     this.checked = [];
   }
+
+  public downloadCsv(): void {
+    this.messageService.downloadCsv();
+  }
 }

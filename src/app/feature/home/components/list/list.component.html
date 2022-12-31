@@ -1,7 +1,8 @@
 <section class="list">
   <div class="list__line">
     <h2 class="list__title">ALL</h2>
-    <button (click)="deleteCards()">delete checks</button>
+    <button (click)="deleteCards()" class="list__checks">delete checks</button>
+    <button (click)="downloadCsv()" class="list__checks">download csv</button>
   </div>
   <article class="list__cards">
     <app-card

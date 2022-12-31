@@ -9,6 +9,7 @@ import { TodoComponent } from './components/todo/todo.component';
 import { SharedModule } from '../../shared/shared.module';
 import { CardComponent } from './components/card/card.component';
 import { MessagesService } from './services/messages.service';
+import { CsvService } from './services/csv.service';
 
 @NgModule({
   declarations: [HomeComponent, ListComponent, TodoComponent, CardComponent],
@@ -19,6 +20,6 @@ import { MessagesService } from './services/messages.service';
     SharedModule,
     FontAwesomeModule,
   ],
-  providers: [MessagesService],
+  providers: [MessagesService , CsvService],
 })
 export class HomeModule {}

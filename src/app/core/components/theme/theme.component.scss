@@ -14,6 +14,7 @@
   justify-content: space-between;
   position: relative;
   transform: scale(1.5);
+  user-select: none;
 
   &__content{
     width: 100%;
@@ -32,6 +33,10 @@
     left: 2.7px;
     border-radius: 50%;
     transition: 0.20s linear;
+
+    &:hover{
+      cursor: pointer;
+    }
   }
 }
 .box__svg {
