@@ -20,7 +20,20 @@ describe('TodoComponent', () => {
     fixture.detectChanges();
   });
 
-  it('should create', () => {
+  it('should create Todo Component', () => {
     expect(component).toBeTruthy();
+  });
+
+  it('invalid form', () => {
+    const { todo } = component.todoForm.controls;
+    const word: string = '';
+    todo.setValue(word.trim());
+    expect(component.todoForm.invalid).toBeTrue();
+  });
+
+  it('valid form', () => {
+    const { todo } = component.todoForm.controls;
+    todo.setValue('test');
+    expect(component.todoForm.valid).toBeTrue();
   });
 });

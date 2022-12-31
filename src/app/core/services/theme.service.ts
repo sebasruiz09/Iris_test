@@ -14,7 +14,7 @@ export class ThemeService {
 
   private isDark: boolean = false;
 
-  private renderer2!: Renderer2;
+  public renderer2!: Renderer2;
 
   constructor(
     @Inject(DOCUMENT) private document: Document,
@@ -34,12 +34,12 @@ export class ThemeService {
     this.theme$.subscribe((value) => {
       localStorage.setItem('theme', String(value));
       this.isDark = value;
-      (this.currentTheme = this.isDark ? 'Dark' : 'Light');
+      this.currentTheme = this.isDark ? 'Dark' : 'Light';
       this.changeBodyClass();
     });
   }
 
-  private changeBodyClass(): void {
+  public changeBodyClass(): void {
     this.renderer2.setAttribute(
       this.document.body,
       'class',

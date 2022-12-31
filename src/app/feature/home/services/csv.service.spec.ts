@@ -11,7 +11,12 @@ describe('CsvService', () => {
     service = TestBed.inject(CsvService);
   });
 
-  it('should be created', () => {
+  it('created Csv Service', () => {
     expect(service).toBeTruthy();
+  });
+
+  it('return undefined with no file rows', () => {
+    const response = service.downloadCsv('test', []);
+    expect(response).toBeUndefined();
   });
 });

@@ -30,7 +30,7 @@ describe('HomeComponent', () => {
     fixture.detectChanges();
   });
 
-  it('should create', () => {
+  it('should create Home Component', () => {
     expect(component).toBeTruthy();
   });
 });

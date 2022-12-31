@@ -17,7 +17,7 @@ describe('CardComponent', () => {
     fixture.detectChanges();
   });
 
-  it('should create', () => {
+  it('should create Card Component', () => {
     expect(component).toBeTruthy();
   });
 });

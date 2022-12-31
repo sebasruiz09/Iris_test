@@ -2,7 +2,7 @@ import { TestBed } from '@angular/core/testing';
 import { MessagesService } from './messages.service';
 import { CsvService } from './csv.service';
 
-describe('MessagesService', () => {
+describe('MessagesService', async () => {
   let service: MessagesService;
 
   beforeEach(() => {
@@ -12,7 +12,13 @@ describe('MessagesService', () => {
     service = TestBed.inject(MessagesService);
   });
 
-  it('should be created', () => {
+  it('created Message Service', () => {
     expect(service).toBeTruthy();
+  });
+
+  it('create Message', () => {
+    service.addMessage('new todo');
+    const data = service.getTestMessages();
+    expect(data.length).toEqual(1);
   });
 });

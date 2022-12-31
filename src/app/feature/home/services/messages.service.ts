@@ -6,9 +6,7 @@ import { CsvService } from './csv.service';
 
 @Injectable()
 export class MessagesService {
-  constructor(
-    private readonly csvService : CsvService,
-  ) {}
+  constructor(private readonly csvService: CsvService) {}
 
   private messages: Message[] = [];
 
@@ -34,7 +32,11 @@ export class MessagesService {
     this.subject.next(this.messages);
   }
 
-  public downloadCsv() : void {
+  public downloadCsv(): void {
     this.csvService.downloadCsv('todo', this.messages);
+  }
+
+  public getTestMessages(): Message[] {
+    return this.messages;
   }
 }

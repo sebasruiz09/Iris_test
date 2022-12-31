@@ -16,7 +16,7 @@ describe('HeaderComponent', () => {
     }).compileComponents();
   });
 
-  it('should create the Header', () => {
+  it('should create the Header Component', () => {
     const fixture = TestBed.createComponent(HeaderComponent);
     const app = fixture.componentInstance;
     expect(app).toBeTruthy();
