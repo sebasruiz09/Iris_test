@@ -1,8 +1,15 @@
+@use '/styles/mixins' as *;
+
 #theme{
     display: none;
 }
 
 .box {
+  @include screen(small){
+    margin: 0;
+  }
+
+  margin: 20px;
   width: 50px;
   padding: 2px;
   align-items: center;
