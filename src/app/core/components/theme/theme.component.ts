@@ -7,5 +7,5 @@ import { ThemeService } from '../../services/theme.service';
   styleUrls: ['./theme.component.scss'],
 })
 export class ThemeComponent {
-  constructor(public themeService: ThemeService) {};
+  constructor(public themeService: ThemeService) {}
 }

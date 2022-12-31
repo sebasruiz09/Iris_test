@@ -1,13 +1,13 @@
 import { Injectable } from '@angular/core';
-import { Message } from '../interfaces/message.interface';
-import { BehaviorSubject, Observable, Subject } from 'rxjs';
+import { BehaviorSubject, Observable } from 'rxjs';
 import { v4 as uuidv4 } from 'uuid';
+import { Message } from '../interfaces/message.interface';
 import { CsvService } from './csv.service';
 
 @Injectable()
 export class MessagesService {
   constructor(
-    private readonly csvService : CsvService
+    private readonly csvService : CsvService,
   ) {}
 
   private messages: Message[] = [];
@@ -35,6 +35,6 @@ export class MessagesService {
   }
 
   public downloadCsv() : void {
-    this.csvService.downloadCsv('todo',this.messages);
+    this.csvService.downloadCsv('todo', this.messages);
   }
 }

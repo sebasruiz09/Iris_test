@@ -1,5 +1,7 @@
 import { DOCUMENT } from '@angular/common';
-import { Inject, Injectable, Renderer2, RendererFactory2 } from '@angular/core';
+import {
+  Inject, Injectable, Renderer2, RendererFactory2,
+} from '@angular/core';
 import { BehaviorSubject } from 'rxjs';
 
 @Injectable({
@@ -14,11 +16,10 @@ export class ThemeService {
 
   private renderer2!: Renderer2;
 
-
   constructor(
     @Inject(DOCUMENT) private document: Document,
-    rendererFactory: RendererFactory2
-    ) {
+    rendererFactory: RendererFactory2,
+  ) {
     this.renderer2 = rendererFactory.createRenderer(null, null);
     const isDark = localStorage.getItem('theme');
     this.theme$ = new BehaviorSubject<boolean>(isDark === 'false');
@@ -33,8 +34,8 @@ export class ThemeService {
     this.theme$.subscribe((value) => {
       localStorage.setItem('theme', String(value));
       this.isDark = value;
-      (this.currentTheme = this.isDark ? 'Dark' : 'Light'),
-        this.changeBodyClass();
+      (this.currentTheme = this.isDark ? 'Dark' : 'Light');
+      this.changeBodyClass();
     });
   }
 

@@ -6,8 +6,8 @@
   </div>
   <article class="list__cards">
     <app-card
-      (onSelect)="selectCards($event)"
-      (onDelete)="onCardDelete(message)"
+      (Select)="selectCards($event)"
+      (Delete)="onCardDelete(message)"
       *ngFor="let message of messages$ | async"
       [message]="message"
     ></app-card>

@@ -1,4 +1,6 @@
-import { Component, EventEmitter, Input, Output } from '@angular/core';
+import {
+  Component, EventEmitter, Input, Output,
+} from '@angular/core';
 import { Message } from '../../interfaces/message.interface';
 
 @Component({
@@ -7,20 +9,22 @@ import { Message } from '../../interfaces/message.interface';
   styleUrls: ['./card.component.scss'],
 })
 export class CardComponent {
-  @Input() message: Message | any = "";
-  @Output() onDelete = new EventEmitter<Message>();
-  @Output() onSelect = new EventEmitter<Message & { selected: boolean }>();
+  @Input() message: Message | any = '';
+
+  @Output() Delete = new EventEmitter<Message>();
+
+  @Output() Select = new EventEmitter<Message & { selected: boolean }>();
 
   selected: boolean = false;
 
   deleteItem() {
-    this.onDelete.emit(this.message);
+    this.Delete.emit(this.message);
   }
 
   checkItem(event: Event) {
     event.preventDefault();
     this.selected = !this.selected;
-    this.onSelect.emit({
+    this.Select.emit({
       ...this.message,
       selected: this.selected,
     });

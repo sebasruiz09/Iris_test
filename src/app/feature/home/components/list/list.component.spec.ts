@@ -11,7 +11,7 @@ describe('ListComponent', () => {
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       declarations: [ListComponent],
-      providers: [MessagesService , CsvService],
+      providers: [MessagesService, CsvService],
     }).compileComponents();
 
     fixture = TestBed.createComponent(ListComponent);

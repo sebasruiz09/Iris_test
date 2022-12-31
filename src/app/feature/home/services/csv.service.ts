@@ -2,34 +2,31 @@ import { Injectable } from '@angular/core';
 
 @Injectable()
 export class CsvService {
+  // eslint-disable-next-line class-methods-use-this
   private convertToCsv(file: string, rows: any[]): string | undefined {
     if (!rows || !rows.length) {
       return;
     }
     const space = ',';
     const keys = Object.keys(rows[0]);
-    const csvData =
-      keys.join(space) +
-      '\n' +
+    const csvData = `${keys.join(space)
+    }\n${
       rows
-        .map((row) => {
-          return keys
-            .map((key) => {
-              let field =
-                row[key] === null || row[key] === undefined ? '' : row[key];
-              field =
-                field instanceof Date
-                  ? field.toLocaleString()
-                  : field.toString().replace(/"/g, '""');
-              if (field.search(/("|,|\n)/g) >= 0) {
-                field = `${field}`;
-              }
-              return field;
-            })
-            .join(space);
-        })
-        .join('\n');
+        .map((row) => keys
+          .map((key) => {
+            let field = row[key] === null || row[key] === undefined ? '' : row[key];
+            field = field instanceof Date
+              ? field.toLocaleString()
+              : field.toString().replace(/"/g, '""');
+            if (field.search(/("|,|\n)/g) >= 0) {
+              field = `${field}`;
+            }
+            return field;
+          })
+          .join(space))
+        .join('\n')}`;
 
+    // eslint-disable-next-line consistent-return
     return csvData;
   }
 

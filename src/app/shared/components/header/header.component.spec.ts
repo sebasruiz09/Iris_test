@@ -7,11 +7,11 @@ describe('HeaderComponent', () => {
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       imports: [
-        RouterTestingModule
+        RouterTestingModule,
       ],
       declarations: [
         HeaderComponent,
-        ThemeComponent
+        ThemeComponent,
       ],
     }).compileComponents();
   });
