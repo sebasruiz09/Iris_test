@@ -1,7 +1,10 @@
 @use "/styles/mixins" as *;
 
 .list {
-  width: 500px;
+  @include screen(minsmall) {
+    width: 500px;
+  }
+  width: 320px;
   padding: 10px;
   font-size: 18px;
 
@@ -10,7 +13,7 @@
     border-bottom: 2px solid var(--border-color);
   }
 
-  &__checks{
+  &__checks {
     margin: 5px 5px 0 0;
     padding: 5px 10px;
     border-radius: 5px;
@@ -21,11 +24,11 @@
     color: var(--card-text-color);
     transition: all 0.3s;
 
-    &:focus{
+    &:focus {
       outline: none;
     }
 
-    &:hover{
+    &:hover {
       cursor: pointer;
     }
   }

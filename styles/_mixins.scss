@@ -1,3 +1,4 @@
+$breakpoint-minsmall: 520px;
 $breakpoint-small: 768px;
 $breakpoint-med-small: 992px;
 $breakpoint-med: 1200px;
@@ -5,6 +6,11 @@ $breakpoint-large: 1400px;
 $breakpoint-XLarge: 1900px;
 
 @mixin screen($size, $type: min, $pixels: $breakpoint-small) {
+  @if $size == "minsmall" {
+    @media screen and (#{$type}-width: $breakpoint-minsmall){
+      @content;
+    }
+  }
   @if $size == "small" {
     @media screen and (#{$type}-width: $breakpoint-small) {
       @content;

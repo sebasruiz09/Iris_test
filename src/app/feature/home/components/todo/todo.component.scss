@@ -1,8 +1,13 @@
 @use "/styles/mixins" as *;
 
 .todo {
-  width: 500px;
+  @include screen(minsmall) {
+    width: 500px;
+  }
+
+  width: 320px;
   padding: 10px;
+  align-items: center;
 
   &__title {
     color: var(--text-color);
@@ -58,7 +63,7 @@
   }
 }
 
-.advert{
+.advert {
   color: var(--secondary-text-color);
   font-size: 14px;
 }
