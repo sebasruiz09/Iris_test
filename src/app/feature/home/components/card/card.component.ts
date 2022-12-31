@@ -7,7 +7,7 @@ import { Message } from '../../interfaces/message.interface';
   styleUrls: ['./card.component.scss'],
 })
 export class CardComponent {
-  @Input() message!: Message;
+  @Input() message: Message | any = "";
   @Output() onDelete = new EventEmitter<Message>();
   @Output() onSelect = new EventEmitter<Message & { selected: boolean }>();
 

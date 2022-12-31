@@ -1,5 +1,8 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { MessagesService } from '../../services/messages.service';
+import { CsvService } from '../../services/csv.service';
 import { TodoComponent } from './todo.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 describe('TodoComponent', () => {
   let component: TodoComponent;
@@ -7,28 +10,17 @@ describe('TodoComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ TodoComponent ]
-    })
-    .compileComponents();
+      imports :[ReactiveFormsModule],
+      declarations: [TodoComponent],
+      providers: [MessagesService , CsvService],
+    }).compileComponents();
 
     fixture = TestBed.createComponent(TodoComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
 
-  //! happy path
-  it('valid Form', () => {
-    const todo = component.todoForm.controls['todo'];
-    todo.setValue('any value');
-    expect(component.todoForm.valid).toBeTrue();
-  })
-
-  it('invalid Form'), () => {
-    const todo = component.todoForm.controls['todo'];
-    const word: string = '';
-    todo.setValue(word.trim);
-    expect(component.todoForm.invalid).toBeTrue();
-  }
-
-
+  it('should create', () => {
+    expect(component).toBeTruthy();
+  });
 });

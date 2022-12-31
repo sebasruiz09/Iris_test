@@ -12,8 +12,8 @@ import { MessagesService } from '../../services/messages.service';
 })
 export class TodoComponent {
   constructor(
+    library: FaIconLibrary,
     private readonly messagesService: MessagesService,
-    library: FaIconLibrary
   ) {
     library.addIcons(faPlus);
     this.buildForm();

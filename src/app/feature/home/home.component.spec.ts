@@ -1,16 +1,28 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-import { HeaderComponent } from 'src/app/shared/components/header/header.component';
 import { HomeComponent } from './home.component';
+import { HeaderComponent } from '../../shared/components/header/header.component';
 import { TodoComponent } from './components/todo/todo.component';
+import { ListComponent } from './components/list/list.component';
+import { MessagesService } from './services/messages.service';
+import { CsvService } from './services/csv.service';
 import { ThemeComponent } from '../../core/components/theme/theme.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
-describe('TodoComponent', () => {
+describe('HomeComponent', () => {
   let component: HomeComponent;
   let fixture: ComponentFixture<HomeComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [HomeComponent, HeaderComponent, TodoComponent, ThemeComponent],
+      imports : [ReactiveFormsModule],
+      declarations: [
+        HomeComponent,
+        HeaderComponent,
+        TodoComponent,
+        ListComponent,
+        ThemeComponent,
+      ],
+      providers: [MessagesService , CsvService]
     }).compileComponents();
 
     fixture = TestBed.createComponent(HomeComponent);

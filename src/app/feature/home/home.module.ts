@@ -20,6 +20,6 @@ import { CsvService } from './services/csv.service';
     SharedModule,
     FontAwesomeModule,
   ],
-  providers: [MessagesService , CsvService],
+  providers: [MessagesService, CsvService],
 })
 export class HomeModule {}
