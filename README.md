@@ -1,14 +1,13 @@
-# IrisTest
+# 1. IrisTest
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 15.0.4.
 
+## Install dependencies
+Run `yarn` or `npm i` and waits for the installation to finish
+
 ## Development server
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
-
-## Code scaffolding
-
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+Run `ng lint --fix` `ng serve` and  for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
 
 ## Build
 
@@ -16,12 +15,24 @@ Run `ng build` to build the project. The build artifacts will be stored in the `
 
 ## Running unit tests
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+Run `ng test` to execute the unit tests Karma with the javascript testing framework Jasmine
 
-## Running end-to-end tests
+Run `ng test --code-coverage` to see the percentage of coverage of unit tests
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+# 2. Extra Features
 
-## Further help
+## Theme functionality
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+toogle integration in the main window to change the theme between dark or light.
+
+<img width="74" alt="image" src="https://user-images.githubusercontent.com/89097798/210148757-409c7742-c017-4af5-b69a-6c31e58c5d96.png">
+
+## Download data in CSV format
+
+functionality to download all aggregated tasks, converting the data structure to csv and then downloading it to the device
+
+<img width="99" alt="image" src="https://user-images.githubusercontent.com/89097798/210148825-a188d30c-a738-4e8b-9323-c6ba2c6d2e9b.png">
+
+## Eslint + Airbnb + lint Rules for .ts files
+
+Eslint configuration for all .ts .spec.ts files, in order to detect unused variables, bad practices, bad indentation and be corrected in time to achieve a more maintainable and readable code.
