@@ -1,12 +1,15 @@
-import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { ReactiveFormsModule } from '@angular/forms';
 import { MessagesService } from '../../services/messages.service';
 import { CsvService } from '../../services/csv.service';
 import { TodoComponent } from './todo.component';
+import { HtmlParser } from '@angular/compiler';
+import { By } from '@angular/platform-browser';
 
 describe('TodoComponent', () => {
   let component: TodoComponent;
   let fixture: ComponentFixture<TodoComponent>;
+  let createButton : HTMLButtonElement
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
@@ -18,6 +21,8 @@ describe('TodoComponent', () => {
     fixture = TestBed.createComponent(TodoComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
+
+    createButton = fixture.debugElement.query(By.css('#sendButton')).nativeElement;
   });
 
   it('should create Todo Component', () => {
@@ -36,4 +41,14 @@ describe('TodoComponent', () => {
     todo.setValue('test');
     expect(component.todoForm.valid).toBeTrue();
   });
+
+  it('should check create todo button is disabled initially',(async() => {
+    fixture.detectChanges();
+    fixture.whenStable().then(() => {
+      debugger;
+      fixture.detectChanges();
+      expect(createButton.disabled).toBe(true);
+     });
+  }));
+    
 });

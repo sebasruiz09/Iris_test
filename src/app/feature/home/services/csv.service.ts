@@ -3,7 +3,7 @@ import { Injectable } from '@angular/core';
 @Injectable()
 export class CsvService {
   // eslint-disable-next-line class-methods-use-this
-  private convertToCsv(file: string, rows: any[]): string | undefined {
+  public convertToCsv(file: string, rows: any[]): string | undefined {
     if (!rows || !rows.length) {
       return;
     }
