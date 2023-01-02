@@ -9,6 +9,8 @@ Run `yarn` or `npm i` and waits for the installation to finish
 
 Run `ng lint --fix` `ng serve` and  for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
 
+Or run `ng serve --host "YOURIP"` to share the project with your network using your pc as a local server.
+
 ## Build
 
 Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
